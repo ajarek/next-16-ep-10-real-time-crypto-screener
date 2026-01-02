@@ -1,6 +1,15 @@
 import Logo from "./Logo"
 import Link from "next/link"
 import { ModeToggle } from "@/components/ModeToggle"
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs"
+import { LogIn, UserRoundPen } from "lucide-react"
+import { Button } from "./ui/button"
 
 const Navbar = () => {
   return (
@@ -15,6 +24,21 @@ const Navbar = () => {
           All Coins
         </Link>
         <ModeToggle />
+          <SignedOut>
+          <SignInButton>
+            <Button size='icon' className='cursor-pointer'>
+              <LogIn className='w-5 h-5 ' />
+            </Button>
+          </SignInButton>
+          <SignUpButton>
+            <Button size='icon' className='cursor-pointer'>
+              <UserRoundPen className='w-5 h-5 ' />
+            </Button>
+          </SignUpButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   )
