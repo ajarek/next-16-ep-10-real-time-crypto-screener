@@ -3,7 +3,6 @@ import coins from "../data/coins.json"
 import {
   Table,
   TableBody,
- 
   TableCell,
   TableHead,
   TableHeader,
@@ -11,8 +10,8 @@ import {
 } from "@/components/ui/table"
 import { TrendingDown, TrendingUp } from "lucide-react"
 import ImagesChartBitcoin from "@/components/ImagesChartBitcoin"
-
-
+import Footer from "@/components/Footer"
+import Link from "next/link"
 
 export default function Home() {
   console.log(coins.length)
@@ -27,12 +26,12 @@ export default function Home() {
               width={60}
               height={60}
             />
-            <div className='flex flex-col gap-1'>
+            <Link href={`/coin/${coins[0].id}`} className='flex flex-col gap-1'>
               <h2 className='text-2xl font-bold'>{coins[0].name}</h2>
               <p>${coins[0].current_price}</p>
-            </div>
+            </Link>
           </div>
-         <ImagesChartBitcoin />
+          <ImagesChartBitcoin />
         </div>
         <div className='w-full  flex flex-col items-start gap-8 border-4 rounded-lg p-4 bg-secondary'>
           <h1 className='text-2xl font-semibold'>Trending Coins</h1>
@@ -49,12 +48,14 @@ export default function Home() {
               {coins.slice(0, 10).map((coin) => (
                 <TableRow key={coin.id}>
                   <TableCell>
+                    <Link href={`/coin/${coin.id}`}>
                     <Image
                       src={coin.image}
                       alt={coin.name}
                       width={32}
                       height={32}
                     />
+                    </Link>
                   </TableCell>
                   <TableCell>{coin.name}</TableCell>
                   <TableCell className='flex items-center gap-2'>
@@ -72,17 +73,7 @@ export default function Home() {
           </Table>
         </div>
       </section>
-      <h2 className='text-2xl font-bold'>Coins</h2>
-      <div className='flex flex-col gap-4'>
-        {coins.slice(0, 10).map((coin) => (
-          <div key={coin.id} className='flex items-center gap-2'>
-            <Image src={coin.image} alt={coin.name} width={32} height={32} />
-            <h2>{coin.name}</h2>
-            <p>{coin.symbol}</p>
-            <p>{coin.current_price}</p>
-          </div>
-        ))}
-      </div>
+      <Footer />
     </div>
   )
 }
