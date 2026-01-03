@@ -10,13 +10,23 @@ import {
 } from "@clerk/nextjs"
 import { LogIn, UserRoundPen } from "lucide-react"
 import { Button } from "./ui/button"
+import { auth, currentUser } from "@clerk/nextjs/server"
 
-const Navbar = () => {
+const Navbar = async () => {
+   const { isAuthenticated } = await auth()
+
   return (
     <div className='h-16 flex items-center justify-between px-8 border-b-2 border-zinc-400'>
       <Logo />
 
       <div className='flex items-center gap-8'>
+        {isAuthenticated && 
+          <Link href='/dashboard' className='text-xl'>
+          Dashboard
+        </Link>
+}
+          
+       
         <Link href='/' className='text-xl'>
           Home
         </Link>
