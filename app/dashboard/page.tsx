@@ -21,7 +21,7 @@ const Dashboard = async () => {
               <TableRow>
                 <TableHead>Image</TableHead>
                 <TableHead>Name</TableHead>
-                <TableHead>Change 24h</TableHead>
+                <TableHead className="max-sm:hidden">Change 24h</TableHead>
                 <TableHead>Price</TableHead>
                 <TableHead>Actions</TableHead>
               </TableRow>
@@ -40,7 +40,7 @@ const Dashboard = async () => {
                     </Link>
                   </TableCell>
                   <TableCell>{coin.name}</TableCell>
-                  <TableCell className='flex items-center gap-2'>
+                  <TableCell className='flex items-center gap-2 max-sm:hidden'>
                     {coin.price_change_percentage_24h.toFixed(2)}%
                     {coin.price_change_percentage_24h < 0 ? (
                       <TrendingDown className='text-red-500' />

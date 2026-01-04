@@ -33,7 +33,7 @@ const AllCoinsPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
   return (
-    <div className='flex flex-col items-center gap-4 mt-4 px-8'>
+    <div className='flex flex-col items-center gap-4 mt-4 px-8 max-sm:px-4'>
       <h1 className='text-2xl font-bold'>AllCoinsPage</h1>
       <div className='w-1/2 relative flex items-center gap-4 '>
         <Input

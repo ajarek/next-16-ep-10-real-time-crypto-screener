@@ -11,7 +11,7 @@ const Coin = async ({ params }: { params: Promise<{ id: string }> }) => {
   const user = await currentUser()
 
   return (
-    <div className='min-h-[calc(100vh-64px)] border-4 rounded-lg px-16 py-8 '>
+    <div className='min-h-[calc(100vh-64px)] border-4 rounded-lg px-16 max-sm:px-4 py-8 max-sm:py-4 '>
       <div className='w-full grid grid-cols-[1fr] md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr] gap-2 place-items-center'>
         <div className='flex items-center gap-2'>
           <Image
