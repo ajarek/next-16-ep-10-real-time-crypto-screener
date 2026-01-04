@@ -7,6 +7,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Trash2, TrendingDown, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ButtonDeleteWatchlist from "@/components/ButtonDeleteWatchlist"
 const Dashboard = async () => {
   const user = await currentUser()
   const watchlist = await getWatchlist(user?.id || "")
@@ -49,14 +50,7 @@ const Dashboard = async () => {
                   </TableCell>
                   <TableCell>{coin.current_price}</TableCell>
                   <TableCell>
-                    <Button
-                      variant='outline'
-                      size='icon'
-                      className='border-2  hover:text-red-500 transition-colors duration-200'
-                     
-                    >
-                      <Trash2 className='h-4 w-4' />
-                    </Button>
+                    <ButtonDeleteWatchlist coinId={coin.id} />
                   </TableCell>
                 </TableRow>
               ))}
