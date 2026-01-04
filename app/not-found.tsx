@@ -16,14 +16,11 @@ export default function NotFound() {
           />
         </div>
 
-        <h1 className='text-4xl font-serif text-primary'>
-          Page not found!
-        </h1>
+        <h1 className='text-4xl font-serif text-primary'>Page not found!</h1>
 
         <p className='max-w-xl text-muted-foreground'>
           It looks like this page is not available or the address is incorrect.
-          Try returning to the home page or verifying the address
-          URL.
+          Try returning to the home page or verifying the address URL.
         </p>
 
         <div className='flex gap-3'>

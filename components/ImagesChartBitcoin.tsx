@@ -32,7 +32,7 @@ const ImagesChartBitcoin = () => {
         width={1420}
         height={820}
         priority
-        className="rounded-lg"  
+        className='rounded-lg'
       />
     </div>
   )

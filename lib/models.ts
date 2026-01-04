@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
 
 export type Watchlist = {
   username: string
@@ -13,4 +13,5 @@ const watchlistSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-export const Watchlist = mongoose.models?.Watchlist || mongoose.model('Watchlist', watchlistSchema)
+export const Watchlist =
+  mongoose.models?.Watchlist || mongoose.model("Watchlist", watchlistSchema)

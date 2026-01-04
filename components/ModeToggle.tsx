@@ -10,8 +10,6 @@ export function ModeToggle() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Zapobiegaj niezgodności hydratacji, czekając na zamontowanie
-    // Użycie setTimeout w celu uniknięcia ostrzeżenia lint „ustaw stan synchronicznie w obrębie efektu”
     const timer = setTimeout(() => {
       setMounted(true)
     }, 0)

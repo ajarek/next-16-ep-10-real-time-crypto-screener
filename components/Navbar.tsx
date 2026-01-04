@@ -10,7 +10,7 @@ import {
 } from "@clerk/nextjs"
 import { LogIn, UserRoundPen } from "lucide-react"
 import { Button } from "./ui/button"
-import { auth, currentUser } from "@clerk/nextjs/server"
+import { auth } from "@clerk/nextjs/server"
 import MobileNavbar from "./MobileNavbar"
 
 const Navbar = async () => {

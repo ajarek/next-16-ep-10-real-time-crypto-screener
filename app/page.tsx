@@ -25,7 +25,7 @@ export default function Home() {
               alt={coins[0].name}
               width={60}
               height={60}
-              className="object-contain"
+              className='object-contain'
             />
             <Link href={`/coin/${coins[0].id}`} className='flex flex-col gap-1'>
               <h2 className='text-2xl font-bold'>{coins[0].name}</h2>
@@ -41,7 +41,7 @@ export default function Home() {
               <TableRow>
                 <TableHead>Image</TableHead>
                 <TableHead>Name</TableHead>
-                <TableHead className="max-sm:hidden">Change 24h</TableHead>
+                <TableHead className='max-sm:hidden'>Change 24h</TableHead>
                 <TableHead>Price</TableHead>
               </TableRow>
             </TableHeader>
@@ -50,12 +50,12 @@ export default function Home() {
                 <TableRow key={coin.id}>
                   <TableCell>
                     <Link href={`/coin/${coin.id}`}>
-                    <Image
-                      src={coin.image}
-                      alt={coin.name}
-                      width={32}
-                      height={32}
-                    />
+                      <Image
+                        src={coin.image}
+                        alt={coin.name}
+                        width={32}
+                        height={32}
+                      />
                     </Link>
                   </TableCell>
                   <TableCell>{coin.name}</TableCell>

@@ -35,7 +35,7 @@ const AllCoinsPage = () => {
   return (
     <div className='flex flex-col items-center gap-4 mt-4 px-8 max-sm:px-4'>
       <h1 className='text-2xl font-bold'>AllCoinsPage</h1>
-      <div className='w-1/2 relative flex items-center gap-4 '>
+      <div className='w-1/2 max-sm:w-full relative flex items-center gap-4 '>
         <Input
           type='search'
           placeholder='Search'
@@ -72,7 +72,6 @@ const AllCoinsPage = () => {
 
           <div className='flex items-center gap-2'>
             {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-              
               let pageNum = currentPage
               if (totalPages <= 5) {
                 pageNum = i + 1
